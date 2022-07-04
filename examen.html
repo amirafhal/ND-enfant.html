@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <label for="number" style="color:brown;">Nombre d'enfants </label><br>
+    <input id="number" type="number"><br><br>
+    <input type="button" value="verifier" onclick="prenom()"><br>
+    <script>
+        function prenom() {
+            let btn = document.getElementsByTagName("input")[1];
+            document.body.removeChild(btn);
+
+
+            let nombre = document.querySelector("input").value;
+            for (let i = 1; i <= nombre; i++) {
+                let div = document.createElement("div");
+                let prenomlabel = document.createElement("label");
+                let prenomInput = document.createElement("input");
+                prenomlabel.textContent = " Prenom de l'enfant numero " + i;
+                prenomInput.setAttribute("type", "text");
+                prenomInput.setAttribute("id", "num" + i);
+                prenomlabel.setAttribute("for", "num" + i);
+                div.style.margin = "0px 0px 5px 0px";
+                prenomInput.style.margin = "0px 0px 0px 5px";
+                prenomlabel.style.color = "purple";
+                document.body.style.backgroundColor = "lightgrey";
+                div.appendChild(prenomlabel);
+                div.appendChild(prenomInput);
+                document.body.appendChild(div);
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>
